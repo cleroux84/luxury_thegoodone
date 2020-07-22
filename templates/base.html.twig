@@ -114,7 +114,7 @@
                         <nav class="overlay-menu">
                             <ul>
                                 <li><a href="{{path('home')}}">Home</a></li>
-                                <li><a href="{# {{ path('job_offer_show', {'id': job_offer.id}) }} #}" >Jobs Offers</a></li>
+                                <li><a href="{{ path('job_offer_index')}}" >Jobs Offers</a></li>
                                 <li><a href="/templates/company.html">About Us</a></li>
                                 <li><a href="/templates/contact.html">Contact</a></li>
                                 <li>-</li>
@@ -146,7 +146,7 @@
                             </a>
                         </li>
                         <li class=" dropdown">
-                            <a target="_self" href="/templates/jobs/index.html">
+                            <a target="_self" href="{{ path('job_offer_index')}}">
                                 <i class=""></i>
                                 <span>Jobs offers</span>
                             </a>

@@ -56,8 +56,12 @@ class JobOfferController extends AbstractController
      */
     public function show(JobOffer $jobOffer): Response
     {
+        $id = $jobOffer->getId();
+        
         return $this->render('job_offer/show.html.twig', [
             'job_offer' => $jobOffer,
+            'offer_id' => $id,
+            
         ]);
     }
 
