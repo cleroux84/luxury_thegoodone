@@ -6,6 +6,8 @@ use App\Entity\Client;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class ClientType extends AbstractType
 {
@@ -18,9 +20,17 @@ class ClientType extends AbstractType
             ->add('contactJob')
             ->add('contactEmail')
             ->add('contactPhoneNumber')
-            ->add('note')
-            ->add('createdAt')
-            ->add('updatedAt')
+            ->add('note', TextareaType::class, [
+                'row_attr' => ['class' => 'text-editor', 'id' => '...'],
+                'attr' => ['class' => 'tinymce'],])
+            ->add('createdAt', DateType::class, [
+                'widget' => 'single_text',
+                'required' => false,
+            ])
+            ->add('updatedAt', DateType::class, [
+                'widget' => 'single_text',
+                'required' => false,
+            ])
         ;
     }
 

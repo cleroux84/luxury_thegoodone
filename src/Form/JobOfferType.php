@@ -24,7 +24,9 @@ class JobOfferType extends AbstractType
                 'row_attr' => ['class' => 'text-editor', 'id' => '...'],
                 'attr' => ['class' => 'tinymce'],])
             ->add('active')
-            ->add('note')
+            ->add('note', TextareaType::class, [
+                'row_attr' => ['class' => 'text-editor', 'id' => '...'],
+                'attr' => ['class' => 'tinymce'],])
             ->add('location')
             ->add('salary')
             ->add('createdAt', DateType::class, [
