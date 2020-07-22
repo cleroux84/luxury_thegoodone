@@ -120,6 +120,7 @@ class UserController extends AbstractController
             'form' => $form->createView(),
             'pourcentage' => round($pourcentage),
         ]);
+        
     }
 
     /**

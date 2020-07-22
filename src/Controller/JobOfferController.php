@@ -52,7 +52,7 @@ class JobOfferController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="job_show", methods={"GET"})
+     * @Route("/{id}", name="job_offer_show", methods={"GET"})
      */
     public function show(JobOffer $jobOffer): Response
     {
