@@ -71,10 +71,54 @@ class UserController extends AbstractController
 
             return $this->redirectToRoute('user_index');
         }
+ /* fonction pourcentage */
+            $pourcentage = 0;
+            if($user->getEmail()){
+                $pourcentage += (100/5);
+            }
+            if($user->getPassword()){
+                $pourcentage += (100/5);
+            }
+            if($user->getGender()){
+                $pourcentage += (100/5);
+            }
+            if($user->getFirstName()){
+                $pourcentage += (100/5);
+            }
+            if($user->getLastName()){
+                $pourcentage += (100/5);
+            } 
+  /*           if($user->getCurrentLocation()){
+                $pourcentage += (100/13);
+            } 
+            if($user->getAddress()){
+                $pourcentage += (100/13);
+            } 
+            if($user->getCountry()){
+                $pourcentage += (100/13);
+            } 
+            if($user->getNationality()){
+                $pourcentage += (100/13);
+            } 
+            if($user->getBirthDate()){
+                $pourcentage += (100/13);
+            } 
+            if($user->getBirthPlace()){
+                $pourcentage += (100/13);
+            } 
+            if($user->getExperience()){
+                $pourcentage += (100/13);
+            } 
+            if($user->getJobCategory()){
+                $pourcentage += (100/13);
+            }  */
+/*  continuer avec les 15 champs */
+
 
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
+            'pourcentage' => round($pourcentage),
         ]);
     }
 
