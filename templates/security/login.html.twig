@@ -1,8 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Log in!{% endblock %}
+  
 
 {% block body %}
+
+
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -31,15 +33,26 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" required>
+     <section class="section-padding gray-bg log-section">
+            <div class="container">
+                <div class="row">
 
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="card card-panel">
+                            <h3 class="text-extrabold">Log in to your account</h3>
+                            <form id="login-form" role="form" method="post" accept-char="UTF-8" autocomplete="off" data-parsley-validate>
+
+                                <input type="hidden" name="_token" value="">
+
+                                <label for="inputEmail">Email</label>
+                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" required autofocus>
+                                <label for="inputPassword">Password</label>
+                                 {# <i class="fa fa-eye show-password"></i> #}
+                                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                                
+                                <input type="hidden" name="_csrf_token"
+                                    value="{{ csrf_token('authenticate') }}">
+                                    
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -51,9 +64,27 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
+                        <button class="btn btn-lg btn-primary" type="submit">
+                            Sign in
+                        </button>
+                    </form>
+                </div>
+            </div>
+             <div class="col-xs-12 col-sm-6 col-md-8">
+                        <div class="card card-panel ptb-70 text-center">
+                            <div class="promo-info">
+                                <h1 class="text-uppercase mb-30 text-extrabold font-30">New to Luxury Services ?</h1>
+                                <p class="width-60 mb-30">Joining us is allowing our recruitment expertise and personal guidance to bring the best out in you by choosing the most suited position.</p>
+                                <a href="/register.html" class="btn btn-lg gradient secondary waves-effect waves-light mt-20"><span>Sign-up<strong> Free</strong></span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
 </div>
+
+
 {% endblock %}
