@@ -8,11 +8,42 @@
     </style>
  {% endblock %}
 
-{% block title %}Edit Candidate{% endblock %}
+
 
 {% block body %}
 
-
+ <!-- Page Content-->
+        <section class="gray-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="score-container">
+                        {% if pourcentage == 100 %}
+                        <h4>
+                            <img src="https://i.imgur.com/s9bPVaK.gif" style="height: 80px; width: 201px;"> &nbsp;
+                            &nbsp; Hooray ! Your profile is complete.
+                        </h4>
+                        <div class="c100 p100 small complete ">
+                            <span>{{ pourcentage }}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        {% else %}
+                        <p>Complete your profile to apply</p>
+                         <div class="c100 p100 small complete ">
+                            <span>{{ pourcentage }}%</span>
+                            <div class="slice">
+                                <div class="bar"></div>
+                                <div class="fill"></div>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </section>
    
 
     {{ include('user/_form.html.twig', {'button_label': 'Update'}) }}

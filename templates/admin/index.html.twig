@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block body %}
+<!-- Page Header-->
+        <section class="page-title page-title-bg fixed-bg overlay dark-5 padding-top-160 padding-bottom-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="white-text">Dashboard Admin</h2>
+                        <span class="white-text"></span>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<div class="portfolio-container">
+
+                    <ul class="portfolio-filter brand-filter text-center">
+
+{#                         <li class="active waves-effect waves-light" data-group="all">All</li>
+ #}                     <a href="{{path('client_index')}}"><li class=" waves-effect waves-light">Clients List</li></a>
+                        <a href="{{path('client_new')}}"><li class=" waves-effect waves-light">Create new client</li></a>
+                        <a href="{{path('user_index')}}"><li class=" waves-effect waves-light">Candidates List</li></a>
+                        <a href="{{path('user_new')}}"><li class=" waves-effect waves-light">Create new candidate</li></a>
+                    </ul>
+                </div>
+
+
+{% endblock %}
