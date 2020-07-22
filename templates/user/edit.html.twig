@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+ {% block stylesheets %}
+     <style>
+        select {
+            display: block!important;
+        }
+    </style>
+ {% endblock %}
+
+{% block title %}Edit Candidate{% endblock %}
+
+{% block body %}
+
+
+   
+
+    {{ include('candidate/_form.html.twig', {'button_label': 'Update'}) }}
+
+    {{ include('candidate/_delete_form.html.twig') }}
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript">
+        onAppReady(function() {
+            $('.preload').remove();
+        });
+    </script>
+{% endblock %}

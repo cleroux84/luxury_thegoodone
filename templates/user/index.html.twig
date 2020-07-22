@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Gender</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>PhoneNumber</th>
+                <th>ProfilePicture</th>
+                <th>CurrentLocation</th>
+                <th>Address</th>
+                <th>Country</th>
+                <th>Nationality</th>
+                <th>BirthDate</th>
+                <th>BirthPlace</th>
+                <th>Passport</th>
+                <th>Resume</th>
+                <th>Experience</th>
+                <th>Description</th>
+                <th>Note</th>
+                <th>CreatedAt</th>
+                <th>UpdatedAt</th>
+                <th>IsAdmin</th>
+                <th>Availability</th>
+                <th>JobCategory</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.phoneNumber }}</td>
+                <td>{{ user.profilePicture }}</td>
+                <td>{{ user.currentLocation }}</td>
+                <td>{{ user.address }}</td>
+                <td>{{ user.country }}</td>
+                <td>{{ user.nationality }}</td>
+                <td>{{ user.birthDate ? user.birthDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.birthPlace }}</td>
+                <td>{{ user.passport }}</td>
+                <td>{{ user.resume }}</td>
+                <td>{{ user.experience }}</td>
+                <td>{{ user.description }}</td>
+                <td>{{ user.note }}</td>
+                <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.isAdmin ? 'Yes' : 'No' }}</td>
+                <td>{{ user.availability ? 'Yes' : 'No' }}</td>
+                <td>{{ user.jobCategory }}</td>
+                <td>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="25">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_new') }}">Create new</a>
+{% endblock %}

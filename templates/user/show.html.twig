@@ -1,0 +1,114 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user.password }}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{ user.gender }}</td>
+            </tr>
+            <tr>
+                <th>FirstName</th>
+                <td>{{ user.firstName }}</td>
+            </tr>
+            <tr>
+                <th>LastName</th>
+                <td>{{ user.lastName }}</td>
+            </tr>
+            <tr>
+                <th>PhoneNumber</th>
+                <td>{{ user.phoneNumber }}</td>
+            </tr>
+            <tr>
+                <th>ProfilePicture</th>
+                <td>{{ user.profilePicture }}</td>
+            </tr>
+            <tr>
+                <th>CurrentLocation</th>
+                <td>{{ user.currentLocation }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ user.address }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ user.country }}</td>
+            </tr>
+            <tr>
+                <th>Nationality</th>
+                <td>{{ user.nationality }}</td>
+            </tr>
+            <tr>
+                <th>BirthDate</th>
+                <td>{{ user.birthDate ? user.birthDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>BirthPlace</th>
+                <td>{{ user.birthPlace }}</td>
+            </tr>
+            <tr>
+                <th>Passport</th>
+                <td>{{ user.passport }}</td>
+            </tr>
+            <tr>
+                <th>Resume</th>
+                <td>{{ user.resume }}</td>
+            </tr>
+            <tr>
+                <th>Experience</th>
+                <td>{{ user.experience }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ user.description }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ user.note }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ user.createdAt ? user.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ user.updatedAt ? user.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>IsAdmin</th>
+                <td>{{ user.isAdmin ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Availability</th>
+                <td>{{ user.availability ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>JobCategory</th>
+                <td>{{ user.jobCategory }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_index') }}">back to list</a>
+
+    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+
+    {{ include('user/_delete_form.html.twig') }}
+{% endblock %}
