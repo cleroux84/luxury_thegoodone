@@ -1,10 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
 
+<section class="page-title page-title-bg fixed-bg overlay dark-5 padding-top-160 padding-bottom-80">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="white-text">Candidates list</h2>
+                        <span class="white-text"></span>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+<div class="container">
     <table class="table">
         <thead>
             <tr>
@@ -39,7 +51,7 @@
         {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.email }}</td>
+                <td><a href="{{ path('user_show', {'id': user.id}) }}">{{ user.email }}</a></td>
                 <td>{{ user.password }}</td>
                 <td>{{ user.gender }}</td>
                 <td>{{ user.firstName }}</td>
@@ -76,4 +88,5 @@
     </table>
 
     <a href="{{ path('user_new') }}">Create new</a>
+    </div>
 {% endblock %}

@@ -36,7 +36,7 @@
         {% for client in clients %}
             <tr>
                 <td>{{ client.id }}</td>
-                <td>{{ client.companyName }}</td>
+                <td><a href="{{ path('client_show', {'id': client.id}) }}">{{ client.companyName }}</a></td>
                 <td>{{ client.companyType }}</td>
                 <td>{{ client.contactName }}</td>
                 <td>{{ client.contactJob }}</td>
