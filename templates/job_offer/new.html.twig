@@ -4,8 +4,10 @@
 
 {% block body %}
     <h1>Create new JobOffer</h1>
-
+<div class="container">
+    
     {{ include('job_offer/_form.html.twig') }}
+</div>
 
     <a href="{{ path('job_offer_index') }}">back to list</a>
 {% endblock %}

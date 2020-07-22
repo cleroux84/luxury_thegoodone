@@ -119,7 +119,9 @@ class UserType extends AbstractType
                     '10+ yeards' => '10+ yeards',
             ],        
             ])
-            ->add('description')
+            ->add('description', TextareaType::class, [
+                'row_attr' => ['class' => 'text-editor', 'id' => '...'],
+                'attr' => ['class' => 'tinymce'],])
             ->add('note')
             ->add('createdAt', DateType::class, [
                 'widget' => 'single_text',
