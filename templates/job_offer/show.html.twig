@@ -42,7 +42,7 @@
                                 <li><span> Location </span>{{ job_offer.location }}</li>
                                 <li><span> Starting date </span>{{ job_offer.closedAt ? job_offer.closedAt|date('Y-m-d H:i:s') : '' }}</li>
                             </ul>
-                            <a class="btn btn-block gradient primary mt-30 waves-effect waves-light" href="{{path('candidature', {'id': job_offer.id})}}">Apply for this job</a>
+                            <a class="btn btn-block gradient primary mt-30 waves-effect waves-light" href="{{path('candidature_new', {'id': job_offer.id})}}">Apply for this job</a>
                             <div class="btn btn-block btn-success mt-30 waves-effect waves-light disabled">You have applied for this job</div>
                         </div>
                     </div>
