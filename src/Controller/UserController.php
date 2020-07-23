@@ -69,7 +69,14 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+/* if('ROLE_ADMIN')
+            { */
             return $this->redirectToRoute('user_index');
+ /*            }
+
+        else{
+            return $this->redirectToRoute('home');
+            } */
         }
  /* fonction pourcentage */
             $pourcentage = 0;
