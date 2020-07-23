@@ -46,9 +46,6 @@ class CandidatureController extends AbstractController
         $entityManager->flush();
 
         return $this->redirectToRoute('home');
-        
-
-       
     }
 
     /**
