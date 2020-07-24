@@ -40,12 +40,15 @@ class CandidatureController extends AbstractController
         $candidature->setCreatedAt(new \DateTime('now'));
         $candidature->setUser($user);
         $candidature->setJobOffer($jobOffer);
-      
+              
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($candidature);
         $entityManager->flush();
 
-        return $this->redirectToRoute('home');
+        return $this->render('job_offer/show.html.twig', [
+            'candidature' => $candidature,
+            'job_offer' => $jobOffer,
+        ]);
     }
 
     /**

@@ -83,7 +83,7 @@
     <script src="http://kys.idmkr.io/cache/assets/frontend.kys.revolution-ext-migration.f05042883f3b2c4d6fdc843e9d033d3a_1547807821.js"></script>
     <script src="http://kys.idmkr.io/cache/assets/frontend.kys.revolution-ext-parallax.402830701f2cb1475353aa7335920e6b_1547807822.js"></script>
 
-        
+        {% block javascripts %}{% endblock %}  
    
 </head>
 
@@ -113,9 +113,9 @@
                     <div class="nav-overlay" id="overlay">
                         <nav class="overlay-menu">
                             <ul>
-                                <li><a href="{{path('home')}}">Home</a></li>
-                                <li><a href="{{ path('job_offer_index')}}" >Jobs Offers</a></li>
-                                <li><a href="/templates/company.html">About Us</a></li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="{{ path('job_offer_index') }}">Jobs Offers</a></li>
+                                <li><a href="/templates/compagny.html">About Us</a></li>
                                 <li><a href="/templates/contact.html">Contact</a></li>
                                 <li>-</li>
                                 <li><a href="/templates/auth/profile.html">Profile</a></li>
@@ -127,12 +127,12 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="menuzord-menu pull-right light" role="navigation">
                         <li class=" dropdown">
-                            <a target="_self" href="{{path('app_login')}}">
+                            <a target="_self" href="{{path("app_login")}}">
                                 <span>Login</span>
                             </a>
                         </li>
                         <li class=" dropdown">
-                            <a target="_self" href="{{path('app_register')}}" class="btn bn-lg gradient secondary btn-block waves-effect waves-light btn-register">
+                            <a target="_self" href="{{path("app_register")}}" class="btn bn-lg gradient secondary btn-block waves-effect waves-light btn-register">
                                 <span>Sign Up</span>
                             </a>
 
@@ -152,7 +152,7 @@
                             </a>
                         </li>
                         <li class=" dropdown">
-                            <a target="_self" href="/templates/company.html">
+                            <a target="_self" href="/templates/compagny.html">
                                 <i class=""></i>
                                 <span>About us</span>
                             </a>
@@ -216,7 +216,7 @@
                     </a>
                 </li>
                 <li class=" dropdown">
-                    <a target="_self" href="/templates/company.html">
+                    <a target="_self" href="/templates/compagny.html">
                         <span>About us</span>
                     </a>
                 </li>
@@ -230,7 +230,7 @@
     </div><!-- /.secondary-footer -->
 </footer>
 
-{% block javascripts %}
+
 <!-- RS5.0 Init  -->
 <script type="text/javascript">
     document.querySelector(".rev_slider_wrapper").setAttribute("style",
@@ -294,9 +294,6 @@
         });
     });
 </script>
-
-{% endblock %}  
-
 
 </body>
 </html>
