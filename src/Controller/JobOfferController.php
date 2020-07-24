@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Candidature;
+use App\Entity\JobCategory;
 use App\Entity\JobOffer;
 use App\Form\JobOfferType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -28,9 +29,14 @@ class JobOfferController extends AbstractController
             ->getRepository(Candidature::class)
             ->findAll();
 
+        $jobCategorys = $this->getDoctrine()
+            ->getRepository(JobCategory::class)
+            ->findAll();
+
         return $this->render('job_offer/index.html.twig', [
             'job_offers' => $jobOffers,
             'candidature' => $candidature,
+            'jobCategorys' => $jobCategorys,
         ]);
     }
 

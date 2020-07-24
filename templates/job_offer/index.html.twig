@@ -30,13 +30,9 @@
 
           <ul class="portfolio-filter brand-filter text-center">
             <li class="active waves-effect waves-light" data-group="all">All</li>
-            <li class=" waves-effect waves-light" data-group="Commercial">Commercial</li>
-            <li class=" waves-effect waves-light" data-group="Retail sales">Retail sales</li>
-            <li class=" waves-effect waves-light" data-group="Creative">Creative</li>
-            <li class=" waves-effect waves-light" data-group="Technology">Technology</li>
-            <li class=" waves-effect waves-light" data-group="Marketing & PR">Marketing & PR</li>
-            <li class=" waves-effect waves-light" data-group="Fashion & luxury">Fashion & luxury</li>
-            <li class=" waves-effect waves-light" data-group="Management & HR">Management & HR</li>
+          {% for jobCategory in jobCategorys %}
+            <li class=" waves-effect waves-light" data-group="{{ jobCategory.name }}">{{ jobCategory.name }}</li>
+          {% endfor %}
           </ul>
 
           <div class="portfolio portfolio-with-title col-2 gutter mt-30">
